@@ -12,15 +12,15 @@ function App() {
 
   return (
     <div>
-      <NavBar />
-      <Switch>
-        <Route path="/movies">
-          <MoviesPage movies={movies} />
-        </Route>
-        <Route exact path="/">
-          <div>Home</div>
-        </Route>
-      </Switch>
+      <Router>
+      <div>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/movies" component={MoviesPage} />
+        </Switch>
+      </div>
+    </Router>
     </div>
   );
 }
